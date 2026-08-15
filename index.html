@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17324d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Stage Entry">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>Stage Entry</title>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div><h1>Stage Entry</h1><p class="subtitle">Works offline and uploads when connected.</p></div>
+      <span id="connection" class="status offline">Offline</span>
+    </header>
+    <section class="card">
+      <form id="entryForm">
+        <label>Name<input id="name" autocomplete="name" value="Ted" required></label>
+        <label>Stage<select id="stage" required>
+          <option value="stage 1">Stage 1</option><option value="stage 2">Stage 2</option><option value="stage 3">Stage 3</option><option value="stage 4">Stage 4</option><option value="stage 5">Stage 5</option>
+        </select></label>
+        <label>Gun Type<select id="gunType" required>
+          <option value="iron rifle">Iron Rifle</option><option value="optic rifle">Optic Rifle</option><option value="pistol">Pistol</option><option value="shotgun">Shotgun</option><option value="other">Other</option>
+        </select></label>
+        <button type="submit" class="primary">SAVE ENTRY</button>
+      </form>
+      <div id="message" class="message" role="status"></div>
+    </section>
+    <section class="card stats"><div><strong id="pending">0</strong><span>Pending</span></div><div><strong id="uploaded">0</strong><span>Uploaded</span></div></section>
+    <section class="card">
+      <div class="section-title"><h2>Recent entries</h2><button id="syncButton" class="secondary">SYNC NOW</button></div>
+      <div id="entries" class="entries"></div>
+    </section>
+    <details class="help"><summary>iPad setup</summary><p>Open this site in Safari, tap Share → Add to Home Screen, then turn on “Open as Web App.”</p><p>The app stores unsent entries on this iPad. Keep the app open when you reconnect so queued entries can upload.</p></details>
+  </main>
+<script src="app.js"></script>
+</body>
+</html>
